@@ -16,7 +16,7 @@ app.get('/api', (req, res) => {
 
 // Health check route
 app.get('/health', (req, res) => {
-  res.send({ status: 'OK' });
+  res.send({ status: 'OK', timestamp: new Date() });
 });
 
 // 404 Not Found handler
