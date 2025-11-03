@@ -14,6 +14,11 @@ app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to the Agile Standup Tracker API!' });
 });
 
+// Health check route
+app.get('/health', (req, res) => {
+  res.send({ status: 'OK' });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
