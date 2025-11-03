@@ -14,6 +14,11 @@ app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to the Agile Standup Tracker API!' });
 });
 
+// New route for API version
+app.get('/api/version', (req, res) => {
+  res.send({ version: '1.0.0' });
+});
+
 // Health check route
 app.get('/health', (req, res) => {
   res.send({ status: 'OK', timestamp: new Date() });
