@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Logging middleware
+app.use((req, res, next) => {
+  console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
+  next();
+});
+
 // Basic route for API
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to the Agile Standup Tracker API!' });
