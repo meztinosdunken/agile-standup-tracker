@@ -19,6 +19,11 @@ app.get('/health', (req, res) => {
   res.send({ status: 'OK' });
 });
 
+// 404 Not Found handler
+app.use((req, res) => {
+  res.status(404).send({ error: 'Not Found' });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
